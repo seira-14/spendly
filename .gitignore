@@ -1,0 +1,67 @@
+# ============================================================
+# Spendly — Root .gitignore
+# ============================================================
+
+# ── OS & Editor ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/settings.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+# ── Environment & Secrets ───────────────────────────────────
+# NEVER commit real credentials
+backend/.env
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ── Build / Runtime artifacts ───────────────────────────────
+backend/vendor/
+backend/node_modules/
+backend/storage/logs/*.log
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/bootstrap/cache/*.php
+
+# ── Flutter / Dart ──────────────────────────────────────────
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/build/
+frontend/.pub-cache/
+frontend/pubspec.lock
+
+# ── Android ─────────────────────────────────────────────────
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/key.properties
+frontend/android/app/google-services.json
+frontend/android/app/debug.keystore
+frontend/android/app/release.keystore
+*.jks
+
+# ── iOS ─────────────────────────────────────────────────────
+frontend/ios/.symlinks/
+frontend/ios/Pods/
+frontend/ios/Podfile.lock
+frontend/ios/Flutter/flutter_export_environment.sh
+frontend/ios/Runner/GoogleService-Info.plist
+
+# ── macOS / Linux / Windows Desktop ────────────────────────
+frontend/macos/Pods/
+frontend/macos/Podfile.lock
+frontend/linux/flutter/ephemeral/
+frontend/windows/flutter/ephemeral/
+
+# ── Firebase ────────────────────────────────────────────────
+# firebase_options.dart is kept (no secrets — uses public config keys only)
+# google-services.json and GoogleService-Info.plist are excluded above
+
+# ── SQLite (dev database — excluded; use migrations in production) ──
+backend/database/database.sqlite
